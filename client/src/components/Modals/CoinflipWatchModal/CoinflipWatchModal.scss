@@ -1,0 +1,230 @@
+.Modal__Footer {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  line-height: 35px;
+  right: 0; left: 0;
+  margin: 0 auto;
+  background: rgb(42, 42, 42);
+  border-top: 1px solid rgb(34, 34, 34);
+
+  p {
+    display: inline-block;
+    color: #8b8b8b;
+    font-size: 12px !important;
+
+    span {
+      background: rgb(20, 20, 20);
+      padding: 2px;
+      border-radius: 3px;
+      font-size: 9px;
+    }
+  }
+}
+
+.Modal__WatchCoinflip {
+  //top: 50px;
+  height: auto;
+  width: 600px;
+
+  .loser > * {
+    opacity: 0.3;
+  }
+
+  .winner .User {
+    box-shadow: 0px 0px 4px black;
+  }
+
+  .UserDisplay {
+    transition: 0.3s all ease-in;
+  }
+
+  .Winner {
+    margin-left: 269px !important;
+    position: relative;
+
+    img {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    p {
+      font-size: 11px;
+      position: absolute;
+      top: 85px;
+      left: -28px;
+
+      &.Secret {
+        top: 105px;
+        left: -15px;
+      }
+    }
+
+    span {
+      font-size: 9px;
+    }
+  }
+
+  .FlipContainer {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+
+    .Flipper {
+      transform-style: preserve-3d;
+      position: relative;
+      transition: 0.6s;
+      height: 60px;
+      width: 60px;
+      animation-name: wanimShow;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-duration: 4s;
+    }
+
+    .black {
+      background-image: url(../../../static/coin-heads.png);
+    }
+
+    .red {
+      background-image: url(../../../static/coin-tails.png);
+    }
+
+    .Front, .Back {
+      height: 60px;
+      width: 60px;
+      background-size: contain;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    .Front {
+      z-index: 2;
+    }
+
+    .Back {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .Modal__Content {
+    position: relative;
+
+    .Status {
+      margin-top: 30px;
+      position: absolute;
+      left: 0; right: 0;
+
+      div:not(.nomargin) {
+        margin-left: 280px;
+      }
+    }
+  }
+
+  .User {
+    height: 70px;
+    width: 70px;
+    border-radius: 3px;
+    margin-top: 20px;
+  }
+
+  .Side {
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    right: 112px;
+    position: absolute;
+  }
+
+  p {
+    color: rgb(161, 161, 161);
+    font-size: 17px;
+  }
+
+  span {
+    background: rgb(31, 31, 31);
+    padding: 2px;
+    border-radius: 3px;
+    color: #eee;
+    font-size: 11px;
+  }
+
+  .Waiting {
+    height: 30px;
+    border-radius: 5px;
+    background: rgba(#131313, 0.5);
+    text-align: center;
+    line-height: 30px;
+    color: #ccc8c8;
+    margin: 10px;
+  }
+
+  .Items {
+    text-align: left;
+    width: auto;
+    margin: 10px;
+    border-radius: 5px;
+    background: rgba(#131313, 0.5);
+    margin-bottom: 50px;
+
+    .Center {
+      text-align: center;
+      padding: 5px 0px;
+      color: #ccc8c8;
+    }
+
+    .Item:not(:last-child) {
+      border-bottom: 1px solid rgb(148, 113, 113);
+    }
+
+    .Item:not(:first-child) {
+      height: 80px;
+      display: flex;
+    }
+
+    .Item {
+      margin: 0px 5px;
+      padding: 8px 0px;
+
+      .Item__Image {
+        height: 65px;
+        width: 65px;
+        margin-right: 10px;
+      }
+
+      img {
+        height: 65px;
+        width: 65px;
+      }
+
+      p {
+        font-size: 13px;
+        margin: 0;
+      }
+
+      span {
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+@keyframes wanimShow {
+  0% {
+    transform: scale(0.8) rotateX(1440deg);
+  }
+  50% {
+    transform: scale(1.3) rotateX(90deg);
+  }
+  60% {
+    transform: scale(1.3) rotateX(0);
+  }
+  100% {
+    transform: scale(1) rotateX(720deg);
+  }
+}
